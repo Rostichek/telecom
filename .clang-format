@@ -1,0 +1,27 @@
+---
+BasedOnStyle: WebKit
+ColumnLimit: 128
+AlignAfterOpenBracket: Align
+AlignConsecutiveShortCaseStatements:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
+AlignEscapedNewlines: Left
+AlignTrailingComments:
+  Kind: Always
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+BreakBeforeBraces: Linux
+BreakConstructorInitializers: BeforeColon
+Cpp11BracedListStyle: true
+FixNamespaceComments: true
+PackConstructorInitializers: Never
+QualifierAlignment: Left
+SpaceBeforeCpp11BracedList: false
+SpaceInEmptyBlock: false
+Standard: c++17
+AlwaysBreakTemplateDeclarations: true
+NamespaceIndentation: All
+Language: Cpp
