@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.16)
 project(Telecom LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets Sql)
+find_package(Qt6 6.9 REQUIRED COMPONENTS Core Gui Widgets Sql)
 
 add_subdirectory(src)
 
