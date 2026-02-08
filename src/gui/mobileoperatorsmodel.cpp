@@ -1,7 +1,7 @@
 #include "mobileoperatorsmodel.h"
 
-#include "core/countryloader.h"
 #include "core/assetsmanager.h"
+#include "core/countryloader.h"
 
 #include <QFont>
 

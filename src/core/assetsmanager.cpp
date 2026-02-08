@@ -8,7 +8,8 @@ AssetsManager* AssetsManager::instance()
     return instance;
 }
 
-QIcon AssetsManager::icon(const QString& name, const QString& type) {
+QIcon AssetsManager::icon(const QString& name, const QString& type)
+{
     const auto path = QStringLiteral(":/icons/%1.%2").arg(name, type);
 
     if (!m_cache.contains(path)) {

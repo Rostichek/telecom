@@ -48,6 +48,7 @@ void IDatabaseWorker::process(const QString& sql, DbCallback callback, const QVa
     emit finished(response, callback);
 }
 
-void IDatabaseWorker::setDb(QSqlDatabase db) {
+void IDatabaseWorker::setDb(QSqlDatabase db)
+{
     m_db = db;
 }

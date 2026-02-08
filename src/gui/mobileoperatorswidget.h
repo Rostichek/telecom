@@ -1,8 +1,8 @@
 #ifndef MOBILEOPERATORSWIDGET_H
 #define MOBILEOPERATORSWIDGET_H
 
-#include <QWidget>
 #include <QTreeView>
+#include <QWidget>
 
 class MobileOperatorsModel;
 class ICountryLoader;
@@ -13,8 +13,6 @@ class MobileOperatorsWidget : public QWidget
 public:
     explicit MobileOperatorsWidget(ICountryLoader* sourceDataLoader, QWidget* parent = nullptr);
     ~MobileOperatorsWidget();
-
-signals:
 
 private:
     QTreeView* m_treeView;

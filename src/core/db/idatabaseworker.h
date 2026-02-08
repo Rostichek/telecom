@@ -6,7 +6,8 @@
 
 #include "types.h"
 
-namespace DB {
+namespace DB
+{
     /**
      * @class   IDatabaseWorker
      * @brief   Abstract base class that defines the logic for a specific database backend (SQLite, Postgres, etc.)
@@ -45,6 +46,6 @@ namespace DB {
     private:
         QSqlDatabase m_db;
     };
-}
+} // namespace DB
 
 #endif // IDATABASEWORKER_H

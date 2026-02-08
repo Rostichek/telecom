@@ -3,17 +3,18 @@
 
 #include <QObject>
 
-namespace DB {
+namespace DB
+{
     using DbResult = std::vector<QVariantMap>;
 
     struct DbResponse {
-        bool success { false };
+        bool success{false};
         QString error;
         DbResult data;
     };
 
     using DbCallback = std::function<void(const DbResponse&)>;
-}
+} // namespace DB
 
 Q_DECLARE_METATYPE(DB::DbCallback)
 Q_DECLARE_METATYPE(DB::DbResponse)

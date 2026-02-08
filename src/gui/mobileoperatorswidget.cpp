@@ -1,15 +1,15 @@
 #include "mobileoperatorswidget.h"
 
-#include "mobileoperatorsmodel.h"
 #include "core/countryloader.h"
+#include "mobileoperatorsmodel.h"
 
-#include <QVBoxLayout>
 #include <QStyledItemDelegate>
+#include <QVBoxLayout>
 
 MobileOperatorsWidget::MobileOperatorsWidget(ICountryLoader* sourceDataLoader, QWidget* parent)
     : QWidget(parent),
-    m_operatorsModel(new MobileOperatorsModel(sourceDataLoader, this)),
-    m_treeView(new QTreeView(this))
+      m_operatorsModel(new MobileOperatorsModel(sourceDataLoader, this)),
+      m_treeView(new QTreeView(this))
 {
     sourceDataLoader->setParent(this);
 
@@ -21,8 +21,6 @@ MobileOperatorsWidget::MobileOperatorsWidget(ICountryLoader* sourceDataLoader, Q
     m_treeView->setItemDelegate(new QStyledItemDelegate(m_treeView));
 
     layout->addWidget(m_treeView);
-
-
 }
 
 MobileOperatorsWidget::~MobileOperatorsWidget() = default;
