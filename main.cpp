@@ -10,7 +10,9 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    QFile stylesheetFile(":/src/gui/styles/base/basestyle.qss");
+    app.setApplicationDisplayName(QStringLiteral("Telecom"));
+
+    QFile stylesheetFile(QStringLiteral(":/src/gui/styles/base/basestyle.qss"));
     if (stylesheetFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
         app.setStyleSheet(stylesheetFile.readAll());
         stylesheetFile.close();
