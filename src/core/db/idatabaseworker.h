@@ -37,7 +37,7 @@ namespace DB
         void finished(const DbResponse& data, DbCallback callback);
 
     public slots:
-        void process(const QString& sql, DbCallback callback, const QVariantMap& params);
+        virtual void process(const QString& sql, DbCallback callback, const QVariantMap& params);
 
     protected:
         virtual QString initConnection() = 0;

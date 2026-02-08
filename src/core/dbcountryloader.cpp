@@ -53,4 +53,8 @@ void DBCountryLoader::parseResponse(const std::vector<QVariantMap>& response)
             country->companies.emplaceBack(std::move(company));
         }
     }
+
+    if (country) {
+        m_data.append(*country);
+    }
 }

@@ -1,6 +1,5 @@
 #include "assetsmanager.h"
 #include <QDebug>
-#include <QDirIterator>
 
 AssetsManager* AssetsManager::instance()
 {

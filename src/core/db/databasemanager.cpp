@@ -7,6 +7,8 @@
 
 using namespace DB;
 
+DatabaseManager* DatabaseManager::s_instance { nullptr };
+
 DatabaseManager::DatabaseManager(QObject* parent)
     : QObject{parent}
 {
@@ -24,8 +26,18 @@ DatabaseManager::~DatabaseManager()
 
 DatabaseManager* DatabaseManager::instance()
 {
-    static auto* instance = new DatabaseManager{};
-    return instance;
+    if (s_instance == nullptr) {
+        s_instance = new DatabaseManager{};
+    }
+    return s_instance;
+}
+
+void DatabaseManager::resetInstance()
+{
+    if (s_instance != nullptr) {
+        delete s_instance;
+        s_instance = nullptr;
+    }
 }
 
 void DatabaseManager::query(const QString& sql, DbCallback callback, const QVariantMap& params)

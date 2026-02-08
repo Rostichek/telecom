@@ -5,6 +5,8 @@
 #include <QIcon>
 #include <QObject>
 
+#include "gtest/gtest_prod.h"
+
 /**
  * @class   AssetsManager
  * @brief   A Singleton utility that provides gui with assets
@@ -18,6 +20,7 @@
 class AssetsManager
 {
     Q_DISABLE_COPY_MOVE_X(AssetsManager, "AssetsManager is Singleton");
+    FRIEND_TEST(AssetsManagerTest, 04_caching);
 
 public:
     /**

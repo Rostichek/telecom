@@ -33,6 +33,7 @@ namespace DB
     {
         Q_OBJECT
         Q_DISABLE_COPY_MOVE_X(DatabaseManager, "DatabaseManager is Singleton");
+        friend class DBCountryLoaderTest;
 
     public:
         ~DatabaseManager();
@@ -61,7 +62,11 @@ namespace DB
     private:
         explicit DatabaseManager(QObject* parent = nullptr);
 
+        static void resetInstance();
+
     private:
+        static DatabaseManager* s_instance;
+
         QThread* m_thread{nullptr};
         IDatabaseWorker* m_worker{nullptr};
     };
