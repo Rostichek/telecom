@@ -3,15 +3,15 @@ project(Telecom LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-find_package(Qt6 6.9 REQUIRED COMPONENTS Core Gui Widgets Sql)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets Sql)
+
+qt_standard_project_setup()
 
 add_subdirectory(src)
 
-add_executable(TelecomApp main.cpp src/gui/resources.qrc)
+qt_add_executable(TelecomApp main.cpp src/gui/resources.qrc)
 
 target_link_libraries(TelecomApp PRIVATE
     TelecomGui
@@ -21,11 +21,10 @@ target_link_libraries(TelecomApp PRIVATE
 )
 
 set(DB_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/assets/system.db")
-set(DB_DEST "${CMAKE_CURRENT_BINARY_DIR}/system.db")
 
-if(EXISTS "${DB_SOURCE}")
-    configure_file("${DB_SOURCE}" "${DB_DEST}" COPYONLY)
-    message(STATUS "Copied system.db to build directory")
-else()
-    message(WARNING "system.db not found in source dir - App will create a new empty one")
-endif()
+add_custom_command(TARGET TelecomApp POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${DB_SOURCE}"
+        "$<TARGET_FILE_DIR:TelecomApp>/system.db"
+    COMMENT "Copying system.db to output directory..."
+)

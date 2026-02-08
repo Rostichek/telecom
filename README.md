@@ -7,7 +7,7 @@ Telecom is a desktop application that provides a directory of mobile network ope
 To build the project from source, you need a development environment that includes:
 
 - C++ Compiler with C++20 support
-- Qt SDK: version 6.9 with Core, Gui, Widgets and Sql modules
+- Qt SDK: Qt6 with Core, Gui, Widgets and Sql modules (verified with Qt 6.9)
 - Git LFS
 
 ## Getting started
@@ -24,12 +24,13 @@ To build the project from source, you need a development environment that includ
 #### Directly with CMake
 
     mkdir build
-    cd build
-    cmake ..
-    cmake --build .
+    cd build 
+    cmake .. -DCMAKE_PREFIX_PATH="your_qt_dir"
+    cmake --build . --config Release
+    windeployqt --release Release/TelecomApp.exe
 
 #### , or in Qt Creator
 
 1. Open CMakeLists.txt as a project.
-2. Select your Qt 6.9 kit.
+2. Select your Qt6 kit.
 3. Press Build or Run.
