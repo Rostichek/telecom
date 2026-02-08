@@ -1,0 +1,39 @@
+QTreeView {
+    outline: 0;
+}
+
+QTreeView::branch:has-siblings:!adjoins-item {
+    border-image: url(:/styles/icons/stylesheet/stylesheet-vline.png) 0;
+}
+
+QTreeView::branch:has-siblings:adjoins-item {
+    border-image: url(:/styles/icons/stylesheet/stylesheet-branch-more.png) 0;
+}
+
+QTreeView::branch:!has-children:!has-siblings:adjoins-item {
+    border-image: url(:/styles/icons/stylesheet/stylesheet-branch-end.png) 0;
+}
+
+QTreeView::branch:has-children:!has-siblings:closed,
+QTreeView::branch:closed:has-children:has-siblings {
+        border-image: none;
+        image: url(:/styles/icons/stylesheet/stylesheet-branch-closed.png);
+}
+
+QTreeView::branch:open:has-children:!has-siblings,
+QTreeView::branch:open:has-children:has-siblings  {
+        border-image: none;
+        image: url(:/styles/icons/stylesheet/stylesheet-branch-open.png);
+}
+
+QTreeView::item {
+    background-image: url(:/styles/icons/stylesheet/stylesheet-hline.png);
+    background-position: bottom;
+    background-repeat: repeat-x;
+}
+
+QTreeView::item:selected {
+    background-color: transparent;
+    color: black;
+    border: none;
+}
