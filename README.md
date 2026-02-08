@@ -2,6 +2,10 @@
 
 Telecom is a desktop application that provides a directory of mobile network operators, organized by country.
 
+## Usage example
+
+![image](https://drive.google.com/uc?export=view&id=128BcW11-fn3D2LKsYS5iGRGJ_mwaR3Ax)
+
 ## Requirements
 
 To build the project from source, you need a development environment that includes:
@@ -23,10 +27,15 @@ To build the project from source, you need a development environment that includ
 
 #### Directly with CMake
 
+Open your **Terminal**
+
     mkdir build
     cd build 
     cmake .. -DCMAKE_PREFIX_PATH="your_qt_dir"
     cmake --build . --config Release
+
+Open your **Qt Command Prompt**
+
     windeployqt --release Release/TelecomApp.exe
 
 #### , or in Qt Creator
