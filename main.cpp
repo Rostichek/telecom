@@ -12,12 +12,6 @@ int main(int argc, char *argv[])
 
     app.setApplicationDisplayName(QStringLiteral("Telecom"));
 
-    QFile stylesheetFile(QStringLiteral(":/src/gui/styles/base/basestyle.qss"));
-    if (stylesheetFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        app.setStyleSheet(stylesheetFile.readAll());
-        stylesheetFile.close();
-    }
-
     DB::DatabaseManager::instance()->initConnection(new DB::LiteWorker{});
 
     MainWindow mainWindow;
